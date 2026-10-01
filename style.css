@@ -1,0 +1,276 @@
+/* ===== Farmácia Cavallaro — estilo vintage ===== */
+
+:root {
+    --papel: #f3e9d2;
+    --papel-escuro: #e6d6b3;
+    --cartao: #fbf5e4;
+    --tinta: #3b2f24;
+    --tinta-suave: #6e5d4b;
+    --verde: #2f5444;
+    --verde-escuro: #223d31;
+    --latao: #b08d3c;
+    --linha: #cdb98d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.55;
+    color: var(--tinta);
+    background-color: var(--papel);
+    /* textura de papel antigo */
+    background-image:
+        radial-gradient(circle at 20% 15%, rgba(176, 141, 60, 0.12), transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(47, 84, 68, 0.10), transparent 45%),
+        repeating-linear-gradient(45deg, rgba(110, 93, 75, 0.035) 0 2px, transparent 2px 5px);
+}
+
+/* ---------- moldura da página ---------- */
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    padding: 36px 34px;
+    background-color: var(--cartao);
+    border: 3px double var(--verde);
+    outline: 1px solid var(--latao);
+    outline-offset: 6px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(59, 47, 36, 0.22);
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: var(--verde);
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 0;
+    margin: 12px auto 0;
+    border-top: 3px double var(--latao);
+}
+
+.subtitulo {
+    margin: 12px 0 26px;
+    text-align: center;
+    font-style: italic;
+    color: var(--tinta-suave);
+}
+
+/* ---------- formulário ---------- */
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: var(--verde-escuro);
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--linha);
+    border-bottom: 2px solid var(--verde);
+    border-radius: 2px;
+    background-color: #fffaf0;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--tinta);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: 2px solid var(--latao);
+    outline-offset: 1px;
+}
+
+.radio {
+    padding: 8px 14px;
+    background-color: var(--papel);
+    border: 1px dashed var(--linha);
+    border-radius: 3px;
+}
+
+.radio label {
+    margin: 8px 0;
+    font-weight: normal;
+    color: var(--tinta);
+}
+
+.cartao {
+    font-weight: normal;
+    color: var(--tinta);
+}
+
+.radio input,
+.cartao input {
+    margin-right: 8px;
+    accent-color: var(--verde);
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+button {
+    width: 50%;
+    padding: 12px;
+    border: 2px solid var(--verde);
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+button[type="submit"] {
+    background-color: var(--verde);
+    color: var(--cartao);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--verde-escuro);
+}
+
+button[type="reset"] {
+    background-color: transparent;
+    color: var(--verde);
+}
+
+button[type="reset"]:hover {
+    background-color: var(--papel-escuro);
+}
+
+button:focus-visible,
+.voltar:focus-visible {
+    outline: 2px solid var(--latao);
+    outline-offset: 3px;
+}
+
+/* ---------- página de resultado ---------- */
+
+.resultado h2 {
+    margin: 28px 0 14px;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: normal;
+    font-style: italic;
+    color: var(--verde);
+}
+
+.dados p {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0;
+    padding: 9px 0;
+    border-bottom: 1px dotted var(--linha);
+}
+
+.dados strong {
+    font-weight: normal;
+    color: var(--tinta-suave);
+}
+
+/* valor final: o "rótulo de receita" da página */
+.total-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 22px;
+    padding: 14px 18px;
+    background-color: var(--verde);
+    color: var(--cartao);
+    border: 3px double var(--latao);
+    border-radius: 3px;
+    font-size: 1.15rem;
+}
+
+.total-final strong {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+/* parcelas com pontilhado, como cardápio/tabela de preços antiga */
+.parcelas {
+    list-style: none;
+    margin: 0;
+    padding: 6px 16px;
+    background-color: var(--papel);
+    border: 1px solid var(--linha);
+    border-radius: 3px;
+}
+
+.parcelas li {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+.parcelas li + li {
+    border-top: 1px dashed var(--linha);
+}
+
+.parcelas .qtd {
+    font-weight: bold;
+    color: var(--verde-escuro);
+}
+
+.parcelas .pontilhado {
+    flex: 1;
+    border-bottom: 2px dotted var(--latao);
+    transform: translateY(-3px);
+}
+
+.parcelas .valor {
+    font-variant-numeric: tabular-nums;
+}
+
+.voltar {
+    display: block;
+    margin-top: 26px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--verde);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.voltar:hover {
+    color: var(--latao);
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding: 28px 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}

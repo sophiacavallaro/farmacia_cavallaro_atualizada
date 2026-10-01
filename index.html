@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Farmácia Cavallaro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Farmácia Cavallaro</h1>
+        <p class="subtitulo">Preencha os dados do pedido</p>
+
+        <form action="resultado.php" method="POST">
+
+            <label>Nome:</label>
+            <input type="text" name="nome" required>
+
+            <label>Total do pedido:</label>
+            <input type="number" name="total" step="0.01" min="0" required>
+
+            <label>Faixa etária:</label>
+
+            <div class="radio">
+
+                <label>
+                    <input type="radio" name="idade" value="0" required>
+                    Menor de 50
+                </label>
+
+                <label>
+                    <input type="radio" name="idade" value="1">
+                    51 a 70
+                </label>
+
+                <label>
+                    <input type="radio" name="idade" value="2">
+                    Maior de 70
+                </label>
+
+            </div>
+
+            <label class="cartao">
+                <input type="checkbox" name="cartao" value="sim">
+                Possui cartão fidelidade
+            </label>
+
+            <div class="botoes">
+                <button type="submit">Calcular</button>
+                <button type="reset">Limpar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
