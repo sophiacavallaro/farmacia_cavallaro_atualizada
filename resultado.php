@@ -1,6 +1,5 @@
 <?php
 
-//obter os dados
 $nome = $_POST['nome'];
 $total = (float) $_POST['total'];
 $idade = (int) $_POST['idade'];
@@ -14,7 +13,6 @@ else
     $cartao = "nao";
 }
 
-//processamento
 $descontoCartao = 0;
 
 if ($idade == 0)
@@ -79,7 +77,6 @@ $valorFinal = $total - $valorDescontoIdade - $valorDescontoCartao;
         <ul class="parcelas">
             <?php
 
-            // ===== VERSÃO 1: usando FOR (ativa) =====
             for ($parcelas = 1; $parcelas <= 6; $parcelas++)
             {
                 $valorParcela = $valorFinal / $parcelas;
@@ -91,8 +88,6 @@ $valorFinal = $total - $valorDescontoIdade - $valorDescontoCartao;
                 echo '</li>';
             }
 
-            // ===== VERSÃO 2: usando WHILE (comentada) =====
-            // Para usar: comente o bloco FOR acima e remova os comentários abaixo.
             /*
             $parcelas = 1;
 
